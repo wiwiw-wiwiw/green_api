@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREEN-API Тестовое задание</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GREEN-API Тестовое задание</h1>
+        </header>
+        
+        <main class="main-layout">
+            <!-- Левая колонка с полями ввода -->
+            <div class="left-column">
+                <section class="connection-section">
+                    <h2>Параметры подключения</h2>
+                    <div class="input-group">
+                        <label for="idInstance">idInstance:</label>
+                        <input type="text" id="idInstance" placeholder="Введите idInstance">
+                    </div>
+                    <div class="input-group">
+                        <label for="apiTokenInstance">ApiTokenInstance:</label>
+                        <div class="password-input-container">
+                            <input type="password" id="apiTokenInstance" placeholder="Введите ApiTokenInstance">
+                            <button type="button" id="toggleToken" class="toggle-btn">👁️</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="methods-section">
+                    <h2>Методы API</h2>
+                    <div class="buttons-grid">
+                        <button id="getSettingsBtn" class="api-btn">getSettings</button>
+                        <button id="getStateInstanceBtn" class="api-btn">getStateInstance</button>
+                    </div>
+                </section>
+
+                <section class="message-section">
+                    <h2>Отправка сообщения</h2>
+                    <div class="input-group">
+                        <label for="phoneNumber">Номер телефона (с кодом страны):</label>
+                        <input type="text" id="phoneNumber" placeholder="79123456789">
+                    </div>
+                    <div class="input-group">
+                        <label for="messageText">Текст сообщения:</label>
+                        <textarea id="messageText" placeholder="Введите текст сообщения"></textarea>
+                    </div>
+                    <button id="sendMessageBtn" class="api-btn full-width">sendMessage</button>
+                </section>
+
+                <section class="file-section">
+                    <h2>Отправка файла по URL</h2>
+                    <div class="input-group">
+                        <label for="filePhone">Номер телефона (с кодом страны):</label>
+                        <input type="text" id="filePhone" placeholder="79123456789">
+                    </div>
+                    <div class="input-group">
+                        <label for="fileUrl">URL файла:</label>
+                        <input type="text" id="fileUrl" placeholder="https://example.com/file.jpg">
+                    </div>
+                    <button id="sendFileByUrlBtn" class="api-btn full-width">sendFileByUrl</button>
+                </section>
+
+                <section class="qr-section">
+                    <h2>QR-код для авторизации</h2>
+                    <button id="getQRCodeBtn" class="api-btn full-width">getQRCode</button>
+                    <div id="qrCodeContainer" class="qr-container">
+                        <div id="qrCodeImage" class="qr-image"></div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Правая колонка с ответами -->
+            <div class="right-column">
+                <section class="response-section">
+                    <h2>Ответ API</h2>
+                    <div class="response-container">
+                        <div id="responseContent" class="response-content" readonly></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
